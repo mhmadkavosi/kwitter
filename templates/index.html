@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <form action="/" method="POST">
+        Name : <input type="text" placeholder="Name" name="name"><br><br> Posts: <input type="text" placeholder="Post Content" name="post"><br><br>
+        <input type="submit" value="submit"><br><br>
+    </form>
+    {% for posts in show_posts %}
+    <div>{{posts[1] + ': ' + posts[2]}}</div>
+    {%endfor%}
+</body>
+
+</html>
