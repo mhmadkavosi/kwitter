@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,flash
 import sqlite3
 from flask_cors import CORS
 import sqlite3 as sql
@@ -14,7 +14,7 @@ from os import path
 app = Flask(__name__)
 CORS(app)
 ROUT = path.dirname(path.relpath((__file__)))
-
+app.secret_key = 'vffn329r0iffasdf939'
 
 def login(): # TODO make a login page for admin 
     pass
@@ -25,7 +25,7 @@ def create_post(name,content):
     cur.execute('INSERT INTO post (name,content) VALUES(?, ?)',(name,content))
     con.commit()
     con.close()
-
+    flash('Your post was sent correctly')
 def get_post():
     con = sql.connect(path.join(ROUT,'database.db'))
     cur = con.cursor()
@@ -38,8 +38,7 @@ def likes(): # TODO users can like the posts
 
 
 @app.route('/',methods=["GET","POST"])
-def index(): # TODO do templates beter 
-    
+def index():  
     if request.method == 'GET':
         pass
     if request.method == 'POST':
