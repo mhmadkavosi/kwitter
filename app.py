@@ -37,7 +37,7 @@ def likes(): # TODO users can like the posts
     pass
 
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/',methods=["GET","POST"])
 def index(): # TODO do templates beter 
     
     if request.method == 'GET':

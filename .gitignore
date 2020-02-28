@@ -1,7 +1,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+__MACOSX/
 # C extensions
 *.so
 
