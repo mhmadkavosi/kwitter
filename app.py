@@ -5,9 +5,8 @@ import sqlite3 as sql
 from os import path
 
 
-# TODO working with flash
+
 # TODO make 404 , ... erorrs page
-# TODO make a page for the best psots
 # TODO make concat us and about page 
 
 
