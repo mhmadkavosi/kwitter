@@ -26,19 +26,31 @@ def create_post(name,content):
     con.commit()
     con.close()
     flash('Your post was sent correctly')
+
+
+
 def get_post():
     con = sql.connect(path.join(ROUT,'database.db'))
     cur = con.cursor()
-    cur.execute('select * from post')
+    cur.execute('SELECT * FROM post ORDER BY id DESC')
     post = cur.fetchall()
     return post
+
+@app.route('/posts',methods=['GET','POST'])
+def show_post():
+    show_post = get_post()
+    return render_template('posts.html',show_post=show_post)
+
 
 def likes(): # TODO users can like the posts
     pass
 
-
 @app.route('/',methods=["GET","POST"])
-def index():  
+def index():
+    return "this is home page"
+
+@app.route('/send_post',methods=["GET","POST"])
+def send_post():  
     if request.method == 'GET':
         pass
     if request.method == 'POST':
@@ -46,9 +58,7 @@ def index():
         post = request.form.get('post')
         create_post(name,post)
     
-    show_posts = get_post()
-    
-    return render_template('index.html',show_posts=show_posts)
+    return render_template('send_post.html')
 
 @app.route('/admin_panel') # TODO the admin can log in into admin panel
 def admin_panel():
@@ -57,4 +67,4 @@ def admin_panel():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=5000,debug=True)
+    app.run(host='0.0.0.0',port=8000,debug=True)

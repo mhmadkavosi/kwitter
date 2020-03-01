@@ -5,20 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="/static/send_post/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/send_post/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/send_post/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="/static/send_post/vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/send_post/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/send_post/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/send_post/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/send_post/css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -26,9 +26,9 @@
 	<div class="contact1">
 		<div class="container-contact1">
 			<div class="contact1-pic js-tilt" data-tilt>
-				<img src="/static/images/img-01.png" alt="IMG">
+				<img src="/static/send_post/images/img-01.png" alt="IMG">
 			</div>
-			<form class="contact1-form validate-form" method="POST" action="/" >
+			<form class="contact1-form validate-form" method='POST'>
 				{% with messages = get_flashed_messages() %}
 				{% if messages %}
 				  <ul class=flashes>
@@ -64,20 +64,17 @@
 
 
 
-{% for posts in show_posts %}
-<div>{{posts[1] + ': ' + posts[2]}}</div>
-{%endfor%}
 
 
 <!--===============================================================================================-->
-	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/static/send_post/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="/static/vendor/bootstrap/js/popper.js"></script>
-	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/send_post/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/send_post/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="/static/vendor/select2/select2.min.js"></script>
+	<script src="/static/send_post/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="/static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script src="/static/send_post/vendor/tilt/tilt.jquery.min.js"></script>
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1
@@ -85,7 +82,7 @@
 	</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>-->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -95,7 +92,7 @@
 </script>
 
 <!--===============================================================================================-->
-	<script src="/static/js/main.js"></script>
+	<script src="/static/send_post/js/main.js"></script>
 
 </body>
 </html>
