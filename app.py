@@ -46,7 +46,7 @@ def likes(): # TODO users can like the posts
 
 @app.route('/',methods=["GET","POST"])
 def index():
-    return "this is home page"
+    return render_template('index.html')
 
 @app.route('/send_post',methods=["GET","POST"])
 def send_post():  

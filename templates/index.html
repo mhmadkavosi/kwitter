@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Posts</title>
+  <title>Home Page</title>
 
   <!-- Bootstrap core CSS -->
   <link href="/static/posts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 <body style="font-family: sans-serif;">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="font-family: sans-serif;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="https://www.instagram.com/mhmad_kavosi/">Kwitter By --Mohammad Kavosi--</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home
+            <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -52,27 +52,13 @@
   <div class="container">
 
     <!-- Jumbotron Header -->
-    
-    <br><br><br><h2 style="text-align: center;">These are the posts you have sent</h2><br><br><br><br>
+    <header class="jumbotron my-4">
+      <h1 class="display-3">A Warm Welcome!</h1>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+      <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+    </header>
     <!--http://placehold.it/500x325-->
     <!-- Page Features -->
-    <div class="row text-center">
-{%for posts in show_post%}
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="#" alt="IMG">
-          <div class="card-body">
-            <h4 class="card-title">
-               {{posts[1]}} 
-            </h4>
-            <p class="card-text">{{posts[2]}}</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-{%endfor%}
 
     </div>
     <!-- /.row -->
