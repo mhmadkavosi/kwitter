@@ -44,7 +44,7 @@ body, html {
 /*---------------------------------------------*/
 a {
 	font-family: sans-serif;
-	font-size: 14px;
+	font-size: 1rem;
 	line-height: 1.7;
 	color: #666666;
 	margin: 0px;
@@ -70,7 +70,7 @@ h1,h2,h3,h4,h5,h6 {
 
 p {
 	font-family: sans-serif;
-	font-size: 14px;
+	font-size: 1rem;
 	line-height: 1.7;
 	color: #666666;
 	margin: 0px;
@@ -133,12 +133,12 @@ iframe {
   min-height: 100%;
   padding: 15px;
 
-  background: #009bff;
-  background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+  background:#f5f6fa;
+  /*background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
   background: -o-linear-gradient(left, #0072ff, #00c6ff);
   background: -moz-linear-gradient(left, #0072ff, #00c6ff);
   background: linear-gradient(left, #0072ff, #00c6ff);
-
+*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -225,7 +225,7 @@ textarea.input1 + .shadow-input1 {
   width: 100%;
   background: #e6e6e6;
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.5;
   color: #666666;
 }
@@ -279,7 +279,7 @@ textarea.input1 + .shadow-input1 {
   border-radius: 25px;
   background: #57b846;
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.5;
   color: #fff;
   display: -webkit-box;
@@ -395,7 +395,7 @@ textarea.input1 + .shadow-input1 {
 
   font-family: sans-serif;
   color: #c80000;
-  font-size: 13px;
+  font-size: 1rem;
   line-height: 1.4;
   text-align: left;
 
@@ -414,7 +414,7 @@ textarea.input1 + .shadow-input1 {
   display: block;
   position: absolute;
   color: #c80000;
-  font-size: 15px;
+  font-size: 1rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);

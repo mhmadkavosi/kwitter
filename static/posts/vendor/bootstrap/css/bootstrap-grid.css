@@ -16,16 +16,17 @@ html {
 }
 
 .container {
-  width: 100%;
+  width: 100px;
+  height: 200px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+/*@media (min-width: 450px) {
   .container {
-    max-width: 540px;
+    max-width: 400px;
   }
 }
 
@@ -46,7 +47,7 @@ html {
     max-width: 1140px;
   }
 }
-
+*/
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -2175,7 +2176,7 @@ html {
 
 .pt-5,
 .py-5 {
-  padding-top: 3rem !important;
+  padding-top: 2rem !important;
 }
 
 .pr-5,
@@ -2185,7 +2186,7 @@ html {
 
 .pb-5,
 .py-5 {
-  padding-bottom: 3rem !important;
+  padding-bottom: 2rem !important;
 }
 
 .pl-5,
