@@ -6,9 +6,6 @@ import sqlite3 as sql
 from os import path
 
 
-
-# TODO make 404 , ... erorrs page
-# TODO make concat us and about page 
 # TODO add time of send to database
 
 app = Flask(__name__)
@@ -70,7 +67,7 @@ def logout():
     return redirect('/admin_login')
 
 
-@app.route('/admin_panel',methods=['POST','GET']) # TODO the admin can log in into admin panel
+@app.route('/admin_panel',methods=['POST','GET'])
 @login_required
 def admin_panel():
     return render_template('admin_panel.html')
