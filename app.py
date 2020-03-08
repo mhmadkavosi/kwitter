@@ -4,6 +4,9 @@ import sqlite3
 from flask_cors import CORS
 import sqlite3 as sql
 from os import path
+from bs4 import BeautifulSoup 
+import urllib.request
+import requests
 
 
 # TODO add time of send to database
@@ -72,10 +75,10 @@ def logout():
 def admin_panel():
     return render_template('admin_panel.html')
 
-def create_post(name,content):
+def create_post(name,content,insta_account):
     con = sql.connect(path.join(ROUT,'database.db'))
     cur = con.cursor()
-    cur.execute('INSERT INTO post (name,content) VALUES(?, ?)',(name,content))
+    cur.execute('INSERT INTO post (name,content,insta_account) VALUES(?, ?,?)',(name,content,insta_account))
     con.commit()
     con.close()
     flash('Your post was sent correctly')
@@ -95,6 +98,15 @@ def show_post():
     return render_template('posts.html',show_post=show_post)
 
 
+def instagram_account():
+    username = username
+    html=urllib.request.urlopen("https://instagram.com/"+t)
+    soup=BeautifulSoup(html,features="html.parser")
+    instagram_url = soup.find("meta",{"property":"og:image"})['content']
+
+
+
+
 def likes(): # TODO users can like the posts
     pass
 
@@ -109,10 +121,10 @@ def send_post():
     if request.method == 'POST':
         name = request.form.get('name')
         post = request.form.get('post')
-        create_post(name,post)
+        insta_account = request.form.get('insta_account')
+        create_post(name,post,insta_account)
     
     return render_template('send_post.html')
-
 
 
 
