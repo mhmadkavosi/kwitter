@@ -7,9 +7,9 @@ from os import path
 from bs4 import BeautifulSoup 
 import urllib.request
 import requests
+import datetime
 
-
-# TODO add time of send to database
+# TODO make delete post for delete post form admin panel
 
 app = Flask(__name__)
 CORS(app)
@@ -70,15 +70,11 @@ def logout():
     return redirect('/admin_login')
 
 
-@app.route('/admin_panel',methods=['POST','GET'])
-@login_required
-def admin_panel():
-    return render_template('admin_panel.html')
 
-def create_post(name,content,insta_account):
+def create_post(name,content,insta_account,time_of_send):
     con = sql.connect(path.join(ROUT,'database.db'))
     cur = con.cursor()
-    cur.execute('INSERT INTO post (name,content,insta_account) VALUES(?, ?,?)',(name,content,insta_account))
+    cur.execute('INSERT INTO post (name,content,insta_account,time_of_send) VALUES(?, ?,?,?)',(name,content,insta_account,time_of_send))
     con.commit()
     con.close()
     flash('Your post was sent correctly')
@@ -106,6 +102,11 @@ def instagram_account():
 
 
 
+@app.route('/admin_panel',methods=['POST','GET'])
+@login_required
+def admin_panel():
+    show_post = get_post()
+    return render_template('admin_panel.html',show_post=show_post)
 
 def likes(): # TODO users can like the posts
     pass
@@ -122,7 +123,8 @@ def send_post():
         name = request.form.get('name')
         post = request.form.get('post')
         insta_account = request.form.get('insta_account')
-        create_post(name,post,insta_account)
+        time_of_send = datetime.datetime.now()
+        create_post(name,post,insta_account,time_of_send)
     
     return render_template('send_post.html')
 

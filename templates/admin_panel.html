@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>Admin panel</title>
 
   <!-- Custom fonts for this template -->
   <link href="/static/admin_panel/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,28 +42,35 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th>ID</th>
                       <th>Name</th>
-                      <th>Post Content</th>
-                      <th>Time of send</th>
+                      <th>Post content</th>
                       <th>Instagram acount</th>
+                      <th>Time of send</th>
                       <th>Delete Post</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
+                      <th>ID</th>
                       <th>Name</th>
-                      <th>Post Content</th>
-                      <th>Time of send</th>
+                      <th>Post content</th>
                       <th>Instagram acount</th>
+                      <th>Time of send</th>
                       <th>Delete Post</th>
                     </tr>
                   </tfoot>
                   <tbody>
+                    {%for posts in show_post%}
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
+                      <td>{{posts[0]}}</td>
+                      <td>{{posts[1]}}</td>
+                      <td>{{posts[2]}}</td>
+                      <td><a href="https://instagram.com/{{posts[3]}}">{{posts[3]}}</a></td>
+                      <td>{{posts[4]}}</td>
+                      <td><button name="delete_post"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                      {%endfor%}
+
                     </tr>
                   </tbody>
                 </table>
@@ -81,7 +88,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Kwitter 2020</span>
           </div>
         </div>
       </footer>
