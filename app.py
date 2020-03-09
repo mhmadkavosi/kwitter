@@ -71,13 +71,14 @@ def logout():
 
 
 
-def create_post(name,content,insta_account,time_of_send):
+def create_post(name,content,insta_account,time_of_send,insta_url):
     con = sql.connect(path.join(ROUT,'database.db'))
     cur = con.cursor()
-    cur.execute('INSERT INTO post (name,content,insta_account,time_of_send) VALUES(?, ?,?,?)',(name,content,insta_account,time_of_send))
+    cur.execute('INSERT INTO post (name,content,insta_account,time_of_send,insta_url) VALUES(?, ?,?,?,?)',(name,content,insta_account,time_of_send,insta_url))
     con.commit()
     con.close()
     flash('Your post was sent correctly')
+    
 
 
 
@@ -88,17 +89,6 @@ def get_post():
     post = cur.fetchall()
     return post
 
-@app.route('/posts',methods=['GET','POST'])
-def show_post():
-    show_post = get_post()
-    return render_template('posts.html',show_post=show_post)
-
-
-def instagram_account():
-    username = username
-    html=urllib.request.urlopen("https://instagram.com/"+t)
-    soup=BeautifulSoup(html,features="html.parser")
-    instagram_url = soup.find("meta",{"property":"og:image"})['content']
 
 
 
@@ -116,7 +106,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/send_post',methods=["GET","POST"])
-def send_post():  
+def send_post():
     if request.method == 'GET':
         pass
     if request.method == 'POST':
@@ -124,10 +114,17 @@ def send_post():
         post = request.form.get('post')
         insta_account = request.form.get('insta_account')
         time_of_send = datetime.datetime.now()
-        create_post(name,post,insta_account,time_of_send)
+        html=urllib.request.urlopen("https://instagram.com/"+insta_account)
+        soup=BeautifulSoup(html,features="html.parser")
+        insta_url = soup.find("meta",{"property":"og:image"})['content']
+        create_post(name,post,insta_account,time_of_send,insta_url)
     
     return render_template('send_post.html')
 
+@app.route('/posts',methods=['GET','POST'])
+def show_post():
+    show_post = get_post()
+    return render_template('posts.html',show_post=show_post)
 
 
 if __name__ == "__main__":
