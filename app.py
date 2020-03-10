@@ -66,7 +66,7 @@ def load_user(userid):
 @login_required
 def logout():
     logout_user()
-    flash('you logou as well')
+    flash('you logout as well')
     return redirect('/admin_login')
 
 
@@ -89,6 +89,15 @@ def get_post():
     post = cur.fetchall()
     return post
 
+def delete_post():
+    con = sql.connect(path.join(ROUT,'database.db'))
+    cur = con.cursor()
+    for posts in get_post():
+        post_id = posts[0]
+        cur.execute('DELETE FROM post WHERE id = {}'.format(post_id))
+        delete_post = cur.fetchall()
+        con.commit()
+        return delete_post
 
 
 
@@ -96,10 +105,12 @@ def get_post():
 @login_required
 def admin_panel():
     show_post = get_post()
-    return render_template('admin_panel.html',show_post=show_post)
+    if request.method == 'POST':
+        delete_post()
+        return render_template('admin_panel.html',show_post=show_post,delete_post=delete_post)
+    else:
+        return render_template('admin_panel.html',show_post=show_post)
 
-def likes(): # TODO users can like the posts
-    pass
 
 @app.route('/',methods=["GET","POST"])
 def index():

@@ -66,9 +66,9 @@
                       <td>{{posts[0]}}</td>
                       <td>{{posts[1]}}</td>
                       <td>{{posts[2]}}</td>
-                      <td><a href="https://instagram.com/{{posts[3]}}">{{posts[3]}}</a></td>
+                      <td><a href="https://instagram.com/{{posts[3]}}" target="_blank">{{posts[3]}}</a></td>
                       <td>{{posts[4]}}</td>
-                      <td><button name="delete_post"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                      <td><form method="POST" name="delete_post"><button type="submit"name="delete_post">Delete</button></form></td>
                       {%endfor%}
 
                     </tr>
