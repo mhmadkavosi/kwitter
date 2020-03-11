@@ -5,7 +5,7 @@ This is a little social network like twitter,you send your message with your nam
 This project it's made by python and flask freamwork and use sqlite database 
 
 ## How to Run 
-for run this you most have python3 and pip and with this coomand you can run it <br/>:
-  pip install -r req.txt
- and after this run this command <br/>:
-  python app.py
+for run this you most have python3 and pip and with this coomand you can run it :  <br/>
+  pip install -r req.txt <br/>
+ and after this run this command : <br/>
+  python app.py <br/>
