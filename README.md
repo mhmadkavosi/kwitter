@@ -1,5 +1,5 @@
 ## Kwitter
-This is a little social network like twitter,you send your message with your name , instagram account and your content in text after this we aoutomatically go in your account and download picture of your profile and put in post you have been send.
+This is a small social network like Twitter, you are sending your message with your name, Instagram account and content so we will automatically go to your account and upload your profile picture and post you want We send.
 
 ## What I used in this project 
 This project it's made by **python** and **flask** freamwork and use sqlite database 
