@@ -25,12 +25,22 @@ body {
 /* Facebook */
 .fa-instagram {
   color: white;
-  align-self: center;
 }
 
 /* Twitter */
 .fa-github {
   color: white;
-  align: center;
 }
- 
+.img-circale{
+  width: 150px;
+  height: 150px;
+  display: block;
+  padding-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
