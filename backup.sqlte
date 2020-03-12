@@ -1,0 +1,10 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE post(
+id INTEGER PRIMARY KEY,
+name TEXT NOT NULL,
+content TEXT NOT NULL,
+insta_account TEXT NOT NULL,
+time_of_send timestamp,
+insta_url TEXT);
+COMMIT;

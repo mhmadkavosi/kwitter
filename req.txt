@@ -28,6 +28,7 @@ filelock==3.0.12
 Flask==1.1.1
 Flask-BabelEx==0.9.4
 Flask-Cors==3.0.8
+Flask-Limiter==1.2.1
 Flask-Login==0.5.0
 Flask-Mail==0.9.1
 Flask-Principal==0.4.0
@@ -50,6 +51,7 @@ launchpadlib==1.10.10
 lazr.restfulclient==0.14.2
 lazr.uri==1.0.3
 lazy-object-proxy==1.4.3
+limits==1.5.1
 lockfile==0.12.2
 louis==3.12.0
 lxml==4.5.0
