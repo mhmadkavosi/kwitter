@@ -1,0 +1,5 @@
+"this is a config file and rename it to config.py"
+
+USERNAME = "put user name"
+PASSWORD = "put password "
+SECRET_KEY = "put a strong secret key "
