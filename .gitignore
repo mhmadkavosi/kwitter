@@ -4,6 +4,7 @@ config.py
 *$py.class
 __MACOSX/
 .fandogh/
+workspace.zip
 # C extensions
 *.so
 
